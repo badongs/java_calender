@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Sum {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// 두수의 합을 구하시요.
 		int i,j;
 		
 		Scanner scanner = new Scanner(System.in);
@@ -21,6 +21,7 @@ public class Sum {
 		//System.out.println("두 수의 합은 =" + sum);
 		
 		System.out.printf("%d와 %d의 합는 %d 입니다.", i, j ,i+j);
+		scanner.close();
 		
 	}
 
