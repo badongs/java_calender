@@ -3,7 +3,32 @@ package com.badongs.calender;
 import java.util.Scanner;
 
 public class Prompt {
-	
+	private final String[] ARR_WEEK_DAY_KEY = { "su", "mo", "tu", "wd", "th", "fr", "sa" };
+	private final String[] ARR_WEEK_DAY_VALUE = { "1", "2", "3", "4", "5", "6", "7" };
+
+	public int parseDay(String week) {
+
+		switch (week) {
+		case "su":
+			return 0;
+		case "mo":
+			return 1;
+		case "tu":
+			return 2;
+		case "wd":
+			return 3;
+		case "th":
+			return 4;
+		case "fr":
+			return 5;
+		default:
+			return 100;
+		}
+
+		// TODO Auto-generated method stub
+
+	}
+
 	public void runPrompt() {
 		Scanner scanner = new Scanner(System.in);
 		Calender cal = new Calender();
@@ -11,6 +36,8 @@ public class Prompt {
 		// int repeat = scanner.nextInt();
 		int year = 2017;
 		int month = 1;
+		int weekday = 0;
+		
 		while (true) {
 			System.out.println("년을 입력하세요");
 			System.out.print("YEAR > ");
@@ -18,11 +45,14 @@ public class Prompt {
 			System.out.println("달을 입력하세요");
 			System.out.print("MONTH > ");
 			month = scanner.nextInt();
-			if (month == -1) {
+			
+			if (year == -1) {
+				System.err.println("잘못된 입력입니다.");
 				break;
 			}
-
-			if (month > 12) {
+			
+			if (month > 12 || month == -1) {
+				System.err.println("잘못된 입력입니다.");
 				continue;
 			}
 			
@@ -33,7 +63,7 @@ public class Prompt {
 		System.out.println("Bye~~");
 		scanner.close();
 	}
-	
+
 	public static void main(String[] args) {
 		// 셀 실행
 		Prompt prompt = new Prompt();
