@@ -3,9 +3,6 @@ package com.badongs.calender;
 import java.util.Scanner;
 
 public class Prompt {
-	private final String[] ARR_WEEK_DAY_KEY = { "su", "mo", "tu", "wd", "th", "fr", "sa" };
-	private final String[] ARR_WEEK_DAY_VALUE = { "1", "2", "3", "4", "5", "6", "7" };
-
 	public int parseDay(String week) {
 
 		switch (week) {
@@ -24,9 +21,7 @@ public class Prompt {
 		default:
 			return 100;
 		}
-
 		// TODO Auto-generated method stub
-
 	}
 
 	public void runPrompt() {
@@ -36,8 +31,6 @@ public class Prompt {
 		// int repeat = scanner.nextInt();
 		int year = 2017;
 		int month = 1;
-		int weekday = 0;
-		
 		while (true) {
 			System.out.println("년을 입력하세요");
 			System.out.print("YEAR > ");
